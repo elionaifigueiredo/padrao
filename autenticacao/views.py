@@ -11,8 +11,8 @@ def cadastro_user(request):
     elif request.method == "POST":
         username = request.POST.get('username')
         email = request.POST.get('email')
-        senha = request.POST.get('senha')
-        #nao pode ter um espaço vazio na esquerda e nem na direita
+        senha = request.POST.get('password')
+        
          
     usuario = User.objects.filter(username=username)
     
