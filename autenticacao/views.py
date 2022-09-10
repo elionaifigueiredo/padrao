@@ -12,7 +12,9 @@ def cadastro_user(request):
         username = request.POST.get('username')
         email = request.POST.get('email')
         senha = request.POST.get('password')
-        
+
+    if len(username.strip()) == 0 or len(email.strip()) == 0 or len(senha.strip()) == 0:
+        return redirect('/auth/cadastro')     
          
     usuario = User.objects.filter(username=username)
     
