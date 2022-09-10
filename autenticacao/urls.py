@@ -3,5 +3,6 @@ from .import views
 
 urlpatterns = [
     path('logar', views.logar_user, name="logar_user"),
-    path('logout_view', views.logout_view, name="logout_view")
+    path('logout_view', views.logout_view, name="logout_view"),
+    path('cadastro', views.cadastro_user, name="cadastro" )
 ]
