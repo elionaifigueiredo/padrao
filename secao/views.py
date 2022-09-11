@@ -8,6 +8,6 @@ def index(request):
     return render(request,'index.html')
 
 
-@login_required(login_url='/auth/logar')
+@login_required(login_url='/logar')
 def home(request):
     return render(request,'home.html')

@@ -14,20 +14,20 @@ def cadastro_user(request):
         senha = request.POST.get('password')
 
     if len(username.strip()) == 0 or len(email.strip()) == 0 or len(senha.strip()) == 0:
-        return redirect('/auth/cadastro')     
+        return redirect('/cadastro')     
          
     usuario = User.objects.filter(username=username)
     
     if usuario.exists():
-        return redirect('/auth/cadastro')
+        return redirect('/cadastro')
     try:
         usuario = User.objects.create_user(username=username,
         email=email,
         password=senha)
         usuario.save()
-        return redirect('/auth/logar')
+        return redirect('/logar')
     except:
-        return redirect('/auth/cadastro')         
+        return redirect('/cadastro')         
         
 def logar_user(request):
     if request.method == "GET":
@@ -42,11 +42,11 @@ def logar_user(request):
         password = request.POST.get('password')
         usuario = auth.authenticate(username=username, password=password)
         if not usuario:
-            return redirect('/auth/logar')
+            return redirect('/logar')
         else:
             auth.login(request, usuario)
             return render(request,'home.html')
 
 def logout_view(request):
     auth.logout(request)
-    return redirect('/auth/logar')
+    return redirect('/logar')

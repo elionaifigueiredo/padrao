@@ -1,25 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>Autenticação</title>
+    <link rel="stylesheet" href="{% static 'css/style_login.css'%}">
 </head>
 <body>
 
-<form action="{% url 'logar_user' %}" method="POST" >
-    {% csrf_token %}
-    <p>
-        <input type="text" name="username" placeholder="Usuário">
-    </p>
-    <p>
-        <input type="password" name="password" placeholder="Password">
-    </p>
-        <button type="submit">LOGAR</button>
-        <hr>
-        <a href="{% url 'cadastro' %}">cadastrar</a>
-</form>
-    
+    <header>
+
+    </header>
+    <section>
+        <h1>Autenticação de Usuário</h1>    
+            <form action="{% url 'logar_user' %}" method="POST" >
+                {% csrf_token %}
+                <p>
+                    <input type="text" name="username" placeholder="Usuário">
+                </p>
+                <p>
+                    <input type="password" name="password" placeholder="Password">
+                </p>
+                    <button type="submit">LOGAR</button>
+                    <hr>
+                    
+                    <div class="box_btn">
+                            <a href="{% url 'cadastro' %}">cadastrar</a>
+                    </div>
+                </form>
+    </section>
+    <footer>
+        &copy;HAMN-sinfo
+    </footer>
 </body>
 </html>
+
+    

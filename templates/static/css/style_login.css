@@ -1,0 +1,39 @@
+body{
+    background: rgb(135, 135, 253);
+}
+
+header{
+
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 5px black;
+}
+
+div{
+
+}
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 15px;
+
+}
+
+.form, input, .box_btn{
+    width: 200px;
+    height: 30px;
+    
+}
+h1{
+    color: black;
+}
